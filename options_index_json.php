@@ -1,7 +1,10 @@
 <?php 
 
 //reading json
-$json = file_get_contents('http://localhost/simplexls-master/examples/Project_T/banknifty.json');
+$json = file_get_contents('nifty_test.json');
+$json=str_replace(' ', '', $json);
+$json=str_replace("'", "\"", $json);
+//$json1 = utf8_encode($json);
 $obj = json_decode($json);
 $data=$obj->records->data;
 $i=0;
