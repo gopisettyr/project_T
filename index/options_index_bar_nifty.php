@@ -19,8 +19,8 @@ $itm=array();
 $otm=array();
 for($i=1;$i<=10;$i++)
 {
-	$otm[$i]=$atm+($i*50);
-	$itm[$i]=$atm-($i*50);
+	$otm[$i]=$atm+($i*100);
+	$itm[$i]=$atm-($i*100);
 }
 
 // echo "otm";

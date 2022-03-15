@@ -10,9 +10,8 @@
 
     <style>
       
-        #chart {
-      max-width: 650px;
-      margin: 35px auto;
+        #chart1 {
+      max-width: 300px;
     }
       
     </style>
@@ -51,12 +50,12 @@
 
   <body>
      <div class="card">
-                <div class="card-header">
-                       BANKNIFTY OI Compass
-                </div>
-                <div class="card-body" id="chart4">
-                </div>
-         </div>
+		<div class="card-header">
+			BANKNIFTY OI Compass
+		</div>
+		<div class="card-body" id="chart1">
+		</div>
+	 </div>
 
     <script>
       $(document).ready(function(){
@@ -102,8 +101,8 @@
 			  categories: data.categories,
 			},
 			};
-			var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
-			chart4.render();
+			var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+			chart1.render();
 		})
       })
     </script>
