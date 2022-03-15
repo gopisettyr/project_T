@@ -2,7 +2,12 @@
 
 //reading json
 $json = file_get_contents('http://localhost/simplexls-master/examples/Project_T/project_T/banknifty.json');
+//var_dump($json);
+$json=str_replace(' ', '', $json);
+$json=str_replace("'", "\"", $json);
+//var_dump($json);
 $obj = json_decode($json);
+//var_dump($obj);
 $data=$obj->records->underlyingValue;
 $atm;
 if(($data%100)<51)
@@ -45,6 +50,21 @@ foreach($otm as $val)
 	// echo "<br>";
 }
 //echo floor($data/100)*100; 
-echo json_encode(array("categories"=>$categories));
+$changeince=array();
+$changeinpe=array();
+$filterdata=$obj->filtered->data;
+$k=0;
+foreach($filterdata as $val)
+{
+	foreach($categories as $cat){
+		if($val->strikePrice==$cat)
+		{
+			$changeince[$k]=$val->CE->changeinOpenInterest;
+			$changeinpe[$k]=$val->PE->changeinOpenInterest;
+			$k++;
+		}
+	}
+}
+echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe));
 
 ?>

@@ -57,9 +57,11 @@
 	  $.getJSON("options_index_bar_json.php", function(data){
 			var options = {
 			  series: [{
-			  data: [44, 55, 41, 64, 22, 43, 21,-500,-5,25,25,15,14,7,1500,1400,444,56,67,89]
+			  name: 'CE',
+			  data: data.CE
 			}, {
-			  data: [53, 32, 33, 52, 13, 44, 32,-5,25,25,15,14,7,1500,1400,444,56,67,89,-600]
+			  name: 'PE',
+			  data: data.PE
 			}],
 			  chart: {
 			  type: 'bar',
@@ -75,7 +77,7 @@
 			},
 			dataLabels: {
 			  enabled: true,
-			  offsetX: -6,
+			  offsetX: 40,
 			  style: {
 				fontSize: '12px',
 				colors: ['#fff']
