@@ -1,7 +1,7 @@
 <?php 
 
 //reading json
-$json = file_get_contents('nifty_test.json');
+$json = file_get_contents('nifty.json');
 $json=str_replace(' ', '', $json);
 $json=str_replace("'", "\"", $json);
 //$json1 = utf8_encode($json);
