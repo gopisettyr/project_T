@@ -11,5 +11,5 @@ $obj = json_decode($json);
 $declines=$obj->declines;
 $advances=$obj->advances;
 $unchanged=$obj->unchanged;
-#$jsonarray=array("Advances"=>$advances,"Unchanged"=>$unchanged,"Declines"=>$declines);
-#echo $jsonarray;
+$jsonarray=array("labels"=>array("Advances","Unchanged","Declines"),"values"=>array($advances,$unchanged,$declines));
+echo json_encode($jsonarray);
