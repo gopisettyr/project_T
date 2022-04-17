@@ -1,7 +1,7 @@
 <?php 
 
 //reading json
-$json = file_get_contents('http://localhost/simplexls-master/examples/Project_T/project_T/banknifty.json');
+$json = file_get_contents('banknifty.json');
 //var_dump($json);
 $json=str_replace(' ', '', $json);
 $json=str_replace("'", "\"", $json);

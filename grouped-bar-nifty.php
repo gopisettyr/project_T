@@ -54,7 +54,7 @@
 
     <script>
       $(document).ready(function(){
-	  $.getJSON("options_index_bar_banknifty.php", function(data){
+	  $.getJSON("options_index_bar_json.php", function(data){
 			var options = {
 			  series: [{
 			  name: 'CE',
@@ -65,7 +65,7 @@
 			}],
 			  chart: {
 			  type: 'bar',
-			  height: 500
+			  height: 600
 			},
 			plotOptions: {
 			  bar: {
@@ -81,7 +81,6 @@
 			  style: {
 				fontSize: '12px',
 				colors: ['#fff']
-          
 			  }
 			},
 			stroke: {
