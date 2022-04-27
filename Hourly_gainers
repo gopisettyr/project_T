@@ -5,7 +5,7 @@ import pandas as pd
 import math
 from datetime import datetime
 
-stock_url = 'https://etmarketsapis.indiatimes.com/ET_Stats/hourlygainers?pagesize=25&exchange=nse&pageno=1&service=gainers&sortby=percentchange&sortorder=desc&marketcap=midcap'
+stock_url = 'https://etmarketsapis.indiatimes.com/ET_Stats/hourlygainers?pagesize=9&exchange=nse&pageno=1&service=gainers&sortby=percentchange&sortorder=desc&marketcap=midcap'
 
 headers = {
      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'}
