@@ -1,0 +1,45 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('Recovery_from_intraday_low.json', function(data) {
+       $.each(data.searchresult, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.nseScripCode + "</td>" +
+           "<td>" + f.current + "</td>" + "<td>" + f.high + "</td>" + "<td>" + f.low + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>nseScripCode</th>
+            <th>current</th>
+            <th>high</th>
+            <th>low</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
