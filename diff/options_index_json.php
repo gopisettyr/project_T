@@ -1,10 +1,10 @@
 <?php 
 
 //reading json
-$json = file_get_contents('banknifty.json');
+$json = file_get_contents('http://localhost/simplexls-master/examples/Project_T/project_T/nifty.json');
 //var_dump($json);
-//$json=str_replace(' ', '', $json);
-//$json=str_replace("'", "\"", $json);
+$json=str_replace(' ', '', $json);
+$json=str_replace("'", "\"", $json);
 //var_dump($json);
 $obj = json_decode($json);
 //var_dump($obj);
@@ -17,7 +17,7 @@ else
 
 $itm=array();
 $otm=array();
-for($i=1;$i<=10;$i++)
+for($i=1;$i<=6;$i++)
 {
 	$otm[$i]=$atm+($i*50);
 	$itm[$i]=$atm-($i*50);
