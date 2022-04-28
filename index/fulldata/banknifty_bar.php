@@ -100,6 +100,9 @@
 			var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
 			chart4.render();
 		})
+	      	setTimeout(function(){
+			$(".apexcharts-gridline").remove();
+		},2000)
       })
     </script>
 
