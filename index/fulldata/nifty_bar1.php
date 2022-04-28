@@ -10,6 +10,11 @@
 
     <style>
       
+        #chart {
+      max-width: 650px;
+      margin: 35px auto;
+    }
+      
     </style>
 
     <script>
@@ -47,15 +52,15 @@
   <body>
      <div class="card">
                 <div class="card-header">
-                       BANKNIFTY OI Compass
+                       NIFTY OI Compass
                 </div>
-                <div class="card-body" id="chart4">
+                <div class="card-body" id="chart">
                 </div>
          </div>
 
     <script>
       $(document).ready(function(){
-	  $.getJSON("banknifty_php_data.php", function(data){
+	  $.getJSON("nifty_php_data.php", function(data){
 			var options = {
 			  series: [{
 			  name: 'CE',
@@ -97,8 +102,8 @@
 			  categories: data.categories,
 			},
 			};
-			var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
-			chart4.render();
+			var chart = new ApexCharts(document.querySelector("#chart"), options);
+			chart.render();
 		})
       })
     </script>

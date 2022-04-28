@@ -8,14 +8,6 @@
 
     <link href="../../assets/styles.css" rel="stylesheet" />
 
-    <style>
-      
-        #chart {
-      max-width: 400px;
-    }
-      
-    </style>
-
     <script>
       window.Promise ||
         document.write(
@@ -33,7 +25,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    
 
     <script>
       // Replace Math.random() with a pseudo-random number generator to get reproducible results in e2e tests
@@ -53,7 +44,7 @@
 		<div class="card-header">
 			NIFTY OI Compass
 		</div>
-		<div class="card-body" id="chart">
+		<div class="card-body apexcharts-canvas apexchartsjyaavffe apexcharts-theme-light" id="chart">
 		</div>
 	 </div>
 
@@ -104,6 +95,10 @@
 			var chart = new ApexCharts(document.querySelector("#chart"), options);
 			chart.render();
 		})
+		
+		setTimeout(function(){
+			$(".apexcharts-gridline").remove();
+		},2000)
       })
     </script>
 
