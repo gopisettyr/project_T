@@ -8,6 +8,10 @@
 
     <link href="../../assets/styles.css" rel="stylesheet" />
 
+    <style>
+      
+    </style>
+
     <script>
       window.Promise ||
         document.write(
@@ -25,6 +29,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
 
     <script>
       // Replace Math.random() with a pseudo-random number generator to get reproducible results in e2e tests
@@ -41,16 +46,16 @@
 
   <body>
      <div class="card">
-		<div class="card-header">
-			NIFTY OI Compass
-		</div>
-		<div class="card-body apexcharts-canvas apexchartsjyaavffe apexcharts-theme-light" id="chart">
-		</div>
-	 </div>
+                <div class="card-header">
+                       BANKNIFTY OI Compass
+                </div>
+                <div class="card-body" id="chart4">
+                </div>
+         </div>
 
     <script>
       $(document).ready(function(){
-	  $.getJSON("nifty_php_data.php", function(data){
+	  $.getJSON("banknifty_php_data.php", function(data){
 			var options = {
 			  series: [{
 			  name: 'CE',
@@ -88,32 +93,14 @@
 			  shared: true,
 			  intersect: false
 			},
-                        annotations: {
-    yaxis: [
-      {
-        y: data.ATM[0],
-        borderColor: "black",
-        label: {
-          borderColor: "#00E396",
-          style: {
-            color: "#fff",
-            background: "#00E396"
-          },
-          text: "ATM"
-        }
-      }
-    ],
-  },
-
 			xaxis: {
 			  categories: data.categories,
 			},
 			};
-			var chart = new ApexCharts(document.querySelector("#chart"), options);
-			chart.render();
+			var chart4 = new ApexCharts(document.querySelector("#chart4"), options);
+			chart4.render();
 		})
-		
-		setTimeout(function(){
+	      	setTimeout(function(){
 			$(".apexcharts-gridline").remove();
 		},2000)
       })

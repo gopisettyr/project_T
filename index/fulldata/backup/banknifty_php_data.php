@@ -1,7 +1,7 @@
 <?php 
 
 //reading json
-$json = file_get_contents('nifty.json');
+$json = file_get_contents('banknifty.json');
 //var_dump($json);
 $json=str_replace(' ', '', $json);
 $json=str_replace("'", "\"", $json);
@@ -17,12 +17,10 @@ else
 
 $itm=array();
 $otm=array();
-$ATM=array();
-$ATM[0]=$atm;
 for($i=1;$i<=10;$i++)
 {
-	$otm[$i]=$atm+($i*50);
-	$itm[$i]=$atm-($i*50);
+	$otm[$i]=$atm+($i*100);
+	$itm[$i]=$atm-($i*100);
 }
 
 // echo "otm";
@@ -67,6 +65,6 @@ foreach($filterdata as $val)
 		}
 	}
 }
-echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe,"ATM"=>$ATM));
+echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe));
 
 ?>

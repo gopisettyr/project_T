@@ -17,8 +17,6 @@ else
 
 $itm=array();
 $otm=array();
-$ATM=array();
-$ATM[0]=$atm;
 for($i=1;$i<=10;$i++)
 {
 	$otm[$i]=$atm+($i*50);
@@ -67,6 +65,6 @@ foreach($filterdata as $val)
 		}
 	}
 }
-echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe,"ATM"=>$ATM));
+echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe));
 
 ?>

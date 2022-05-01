@@ -93,6 +93,22 @@
 			  shared: true,
 			  intersect: false
 			},
+                        annotations: {
+    yaxis: [
+      {
+        y: data.ATM[0],
+        borderColor: "black",
+        label: {
+          borderColor: "#00E396",
+          style: {
+            color: "#fff",
+            background: "#00E396"
+          },
+          text: "ATM"
+        }
+      }
+    ],
+  },
 			xaxis: {
 			  categories: data.categories,
 			},
