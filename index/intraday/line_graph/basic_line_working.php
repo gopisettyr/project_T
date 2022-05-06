@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dashed Line Chart</title>
+    <title>Basic Line Chart</title>
 
     <link href="../../assets/styles.css" rel="stylesheet" />
 
@@ -46,88 +46,56 @@
       };
     </script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
- 
+    
   </head>
 
   <body>
      <div id="chart"></div>
 
     <script>
-       $(document).ready(function(){
-       $.getJSON("nifty_data.json", function(data){
+      
         var options = {
           series: [{
-            name: "CE Change",
-            data: data.CE
-          },
-          {
-            name: "PE Change",
-            data: data.PE
-          },
-        ],
+            name: "Desktops",
+            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        },
+            {
+            name: "Test",
+            data: [41, 35, 51, 49, 62, 69, 91, 148,10]
+        }
+ ],
           chart: {
           height: 350,
           type: 'line',
           zoom: {
-            enabled: true
-          },
+            enabled: false
+          }
         },
         dataLabels: {
           enabled: false
         },
         stroke: {
-          width: [5, 7, 5],
-          curve: 'straight',
-          dashArray: [0, 8, 5]
+          curve: 'straight'
         },
         title: {
-          text: 'Change in OI Graph',
+          text: 'Product Trends by Month',
           align: 'left'
         },
-        legend: {
-          tooltipHoverFormatter: function(val, opts) {
-            return val + ' - <strong>' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + '</strong>'
-          }
-        },
-        markers: {
-          size: 0,
-          hover: {
-            sizeOffset: 6
-          }
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
         },
         xaxis: {
-          categories: data.categories,
-        },
-        tooltip: {
-          y: [
-            {
-              title: {
-                formatter: function (val) {
-                  return val
-                }
-              }
-            },
-            {
-              title: {
-                formatter: function (val) {
-                  return val 
-                }
-              }
-            },
-            {
-            }
-          ]
-        },
-        grid: {
-          borderColor: '#f1f1f1',
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-      })
-      })
+      
+      
     </script>
 
     
