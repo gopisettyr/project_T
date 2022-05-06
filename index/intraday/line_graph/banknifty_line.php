@@ -79,8 +79,8 @@
           curve: 'straight'
         },
         title: {
-          text: 'Product Trends by Month',
-          align: 'left'
+          text: 'Bank Nifty OI Change',
+          align: 'Center'
         },
         grid: {
           row: {
@@ -93,8 +93,8 @@
         }
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+        var chart4 = new ApexCharts(document.querySelector("#chart"), options);
+        chart4.render();
  })
 })     
       

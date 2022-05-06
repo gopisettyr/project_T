@@ -79,8 +79,8 @@
           curve: 'straight'
         },
         title: {
-          text: 'Product Trends by Month',
-          align: 'left'
+          text: 'Nifty OI Change',
+          align: 'center'
         },
         grid: {
           row: {
@@ -93,8 +93,8 @@
         }
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+        var chart1 = new ApexCharts(document.querySelector("#chart"), options);
+        chart1.render();
  })
 })     
       
