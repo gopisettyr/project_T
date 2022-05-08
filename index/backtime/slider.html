@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intraday OI</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="ion.rangeSlider.min.css">
+	<link rel="stylesheet" href="ion.rangeSlider.skinModern.less">
+</head>
+<body>
+<form action="index.php" method="post">
+<input type="text" id="ion" name="example_name" value="" />
+<input type="hidden" id="fromdate" name="fromdate" />
+<input type="hidden" id="todate" name="todate" />
+<input type="submit" class="btn btn-primary" value='Submit'/>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+	<script src="https://rawgit.com/IonDen/ion.rangeSlider/master/js/ion.rangeSlider.min.js"></script>
+<script>
+$(document).ready(function(){
+	//$("#fromdate").val(moment(data.from).format("HHmm"));
+	//$("#todate").val(moment(data.to).format("HHmm"));
+	$('#ion').ionRangeSlider({
+		grid: true,
+		type: 'double',
+		min: moment("0920", "hhmm").valueOf(),
+		max: moment("1530", "hhmm").valueOf(),
+		from: moment("1000", "hhmm").valueOf(),
+		to: moment("1005", "hhmm").valueOf(),
+		force_edges: true,
+		drag_interval: true,
+		step: 30000,
+		min_interval: 30000,
+		prettify: function (num) {
+			return moment(num).format('HH:mm');
+		},
+		onChange: function (data) {
+				// fired on every range slider update
+				//alert(Math.floor((data.from)));
+				$("#fromdate").val(moment(data.from).format("HHmm"));
+				$("#todate").val(moment(data.to).format("HHmm"));
+				//alert(fromdate+"---"+todate);
+				//alert(fromdate+"---"+todate);
+		}
+	});
+})
+</script>
+</body>	
+</html>   
