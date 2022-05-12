@@ -67,6 +67,13 @@ foreach($filterdata as $val)
 		}
 	}
 }
-echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe,"ATM"=>$ATM));
+//echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe,"ATM"=>$ATM));
+$maxVal = max($changeince);
+$maxKey = array_search($maxVal, $changeince);
+$CEOI = $categories[$maxKey];
+$maxVal = max($changeinpe);
+$maxKey = array_search($maxVal, $changeinpe);
+$PEOI = $categories[$maxKey];
 
+echo json_encode(array("categories"=>$categories,"CE"=>$changeince,"PE"=>$changeinpe,"ATM"=>$ATM,"CEOI"=>$CEOI,"PEOI"=>$PEOI));
 ?>
