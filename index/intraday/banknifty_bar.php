@@ -111,6 +111,30 @@
            },
            text: "ATM"
          }
+            },
+      {
+         y: data.PEOI,
+         borderColor: "Green",
+         label: {
+           borderColor: "green",
+           style: {
+             color: "black",
+             background: "green"
+           },
+           text: "Major Support"
+         }
+       },
+         {
+         y: data.CEOI,
+         borderColor: "Red",
+         label: {
+           borderColor: "#e30000",
+           style: {
+             color: "black",
+             background: "#e30000"
+           },
+           text: "Major Resistance"
+         }
        }
      ],
    },
