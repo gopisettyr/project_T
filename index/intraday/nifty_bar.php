@@ -120,7 +120,7 @@
              color: "black",
              background: "green"
            },
-           text: "Major Support"
+           text: "Support"
          }
        },
          {
@@ -132,7 +132,7 @@
              color: "black",
              background: "#e30000"
            },
-           text: "Major Resistance"
+           text: "Resistance"
          }
        }
     ],
