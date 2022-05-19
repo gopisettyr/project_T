@@ -116,7 +116,7 @@
              color: "black",
              background: "green"
            },
-           text: "Support"
+           text: "Resistance"
          }
        },
          {
@@ -128,7 +128,7 @@
              color: "black",
              background: "#e30000"
            },
-           text: "Resistance"
+           text: "Support"
          }
        }
     ],
